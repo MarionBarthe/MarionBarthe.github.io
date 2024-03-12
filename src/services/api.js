@@ -1,8 +1,7 @@
-// let response = await fetch('https://www.dnd5eapi.co/api/monsters/')
 
-const getMonstersData = async () => {
+const getDndData = async (search) => {
     const response = await fetch(
-      "https://api.open5e.com/monsters/", 
+      "https://api.open5e.com/search/?text="+search, 
         {
           method: "GET", // or GET, PUT, DELETE, etc.
           headers: {
@@ -15,4 +14,4 @@ const getMonstersData = async () => {
   }
 
 
-export {getMonstersData}
+export {getDndData}
