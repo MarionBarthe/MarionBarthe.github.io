@@ -17,15 +17,15 @@
       </select>
       <div>
         <label>Filter : </label>
-        <input type="checkbox" name="typeFilter" v-model="monstersFilter" @change="filter"> Monsters
-        <input type="checkbox" name="typeFilter" v-model="spellsFilter" @change="filter"> Spells
-        <input type="checkbox" name="typeFilter" v-model="magicItemsFilter" @change="filter"> Magic items
+        <input type="checkbox" name="typeFilter" v-model="checkedTypes" value="monsters/" @change="updateFilter"> Monsters
+        <input type="checkbox" name="typeFilter" v-model="checkedTypes" value="spells/" @change="updateFilter"> Spells
+        <input type="checkbox" name="typeFilter" v-model="checkedTypes" value="magicitems/" @change="updateFilter"> Magic items
       </div>
     </div>
   </div>
-    <div class="gallery">
+    <div class="gallery flex-container">
         <DndCard 
-          v-for="element in dndData"
+          v-for="element in organizedDndData"
           :key="element.slug" 
           :name="element.name"
           :highlight="element.highlighted"
@@ -44,14 +44,26 @@
   export default {
     name: 'Gallery',
    
+    computed: {
+      organizedDndData: function() {
+        const field = ["AZName", "ZAName"].includes(this.cardSortType) ? "name" : "route"
+        const reversed = ["ZAName"].includes(this.cardSortType)
+
+        const filterFunc = (a) => this.checkedTypes.includes(a.route) 
+        
+        const comparator = (a, b) => a[field].localeCompare(b[field]) 
+        let data = this.dndData.filter(filterFunc)
+        data = data.sort(comparator)
+        if (reversed) data = data.reverse()
+        return data
+      }
+    },
     data() {
       return {
         dndData: [],
         search : "",
         cardSortType: "type",
-        monstersFilter : true,
-        spellsFilter : true,
-        magicItemsFilter : true
+        checkedTypes: ["spells/", "monsters/", "magicitems/"]
       };
     },
     created: function() {
@@ -82,14 +94,16 @@
             this.dndData.sort((a,b) => a.type >=b.type);
           }
         },
-        filter: function(){
-          if(!monstersFilter){
-            this.dndData = this.dndData.filter(type=="")
-          }
+        updateFilter: function(){
+          
         }
     },
     components : { 
       DndCard
     }  
   }
-  </script>
+</script>
+
+<style>
+ 
+</style>
