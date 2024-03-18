@@ -1,19 +1,22 @@
 <template>
-    <div class="dnd-card flex-items">
-      <div class="card-img">
-        <img v-bind:src="pictureUrl"/>
-      </div>
-      <header class="name card-header">{{ name }}</header>
+    <div class="dnd-card flex-items dnd-card-test">
+        <div class="card-img">
+          <img v-bind:src="pictureUrl"/>
+        </div>      
+        <header class="card-header">
 
-      <div class="card-content">
+        <h4 class="name ">{{ name }}</h4>
+        <p class="source">{{ source }}</p>
+      </header>
 
-        <p class="type" v-if=" type=='monsters/'">Monster</p>
+      <!-- <div class="card-content"> -->
+
+        <!-- <p class="type" v-if=" type=='monsters/'">Monster</p>
         <p class="type" v-else-if=" type=='spells/'">Spell</p>
-        <p class="type" v-else-if=" type=='magicitems/'">Magic item</p>
+        <p class="type" v-else-if=" type=='magicitems/'">Magic item</p> -->
 
         <p class="highlight" v-html=" highlight "></p>
-        <p class="source">{{ source }}</p>
-      </div>
+      <!-- </div> -->
      
 
     </div>

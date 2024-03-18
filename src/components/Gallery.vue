@@ -1,7 +1,7 @@
 <template>
    
   <div class="gallery-options">
-    <div class="search-bar">
+    <div class="search-bar"> <!-- @updatesearch-->
       <label for="search">Cherchez des sorts, monstres et autre par thème : </label>
       <input type="text" id="search" v-model="search" placeholder="ex : fire, dark, fun..." @keyup.enter="searchResults">
       <button v-if="search" @click="cleanSearch">X</button>

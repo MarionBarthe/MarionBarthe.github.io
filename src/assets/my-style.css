@@ -55,46 +55,73 @@
 
 
 .dnd-card{
-    border: 2px solid;
-    height: 250px;
-    width: 250px;
-    /* display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center; */
-    padding: 10px;
-    margin: 10px;
-    overflow: hidden;
-    position: relative;
+  border: 2px solid;
+  height: 250px;
+  width: 250px;
+  /* 
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center; */
+  padding: 10px;
+  margin: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.dnd-card-test {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 40% 60%;
+  grid-template-areas: 
+            "a b "
+            "c c ";
+  /* gap: 1em; */
 }
 .card-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 150px;
-    height: 150px;
-  }
+  position: absolute;
+  grid-area: 1/1/1/1;
+
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: auto;
+}
 .card-img img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* To ensure the image covers the container */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* To ensure the image covers the container */
 }
 .card-header{
-    padding: 20px;
-    margin-left: 20px; /* Adjust margin to accommodate image width */
+  grid-area: 1 / 2 / 1 / 2;
+
+  /* display: flex; */
+  /* padding: 20px; */
+  margin-left: 10px; /* Adjust margin to accommodate image width */
 }
 .card-content{
-    padding: 20px;
+  /* display: flex; */
+    /* flex-direction: column; */
+
+  padding: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 span.highlighted {
-    font-weight : bold;
+  font-weight : bold;
 }
 .source {
-    font-style: italic;
+  font-style: italic;
+  /* grid-area : 3 / 1 / 3 / 3; */
 }
 .name {
     font-size: 24px;
     font-weight: bold;
     text-align: center;
     margin-bottom: 10px;
+}
+.highlight {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  grid-area: 2 / 1 / 2 / 2;
+
 }
