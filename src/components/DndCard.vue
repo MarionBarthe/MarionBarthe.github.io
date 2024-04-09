@@ -2,12 +2,12 @@
     <div class="dnd-card flex-items dnd-card-test">
         <div class="card-img">
           <img v-bind:src="pictureUrl"/>
-        </div>      
+        </div>   
+           
         <header class="card-header">
-
-        <h4 class="name ">{{ name }}</h4>
-        <p class="source">{{ source }}</p>
-      </header>
+          <h4 class="name ">{{ name }}</h4>
+          <p class="source">{{ source }}</p>
+        </header>
 
       <!-- <div class="card-content"> -->
 
@@ -15,7 +15,9 @@
         <p class="type" v-else-if=" type=='spells/'">Spell</p>
         <p class="type" v-else-if=" type=='magicitems/'">Magic item</p> -->
 
-        <p class="highlight" v-html=" highlight "></p>
+        <div class="highlight">
+          <p v-html=" highlight "></p>
+        </div>
       <!-- </div> -->
      
 
