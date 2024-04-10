@@ -55,14 +55,15 @@
 
 
 .dnd-card{
+  --card_dimension: 250px;
   border: 2px solid;
-  height: 250px;
-  width: 250px;
+  height: var(--card_dimension);
+  width: var(--card_dimension);
   /* 
   flex-wrap: wrap;
   align-items: center;
   justify-content: center; */
-  padding: 10px;
+  /* padding: 10px; */
   margin: 10px;
   position: relative;
   display: flex;
@@ -70,20 +71,21 @@
 }
 .dnd-card-test {
   display: grid;
-  grid-template-columns: 40% 60%;
-  grid-template-rows: 40% 60%;
+  /* place-items:start center; */
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 30% 60% 10%;
   grid-template-areas: 
             "a b "
-            "c c ";
+            "c c "
+            "d d ";
   /* gap: 1em; */
 }
 .card-img {
   position: absolute;
-  grid-area: 1/1/1/1;
-
+  grid-area: a;
   top: 0;
   left: 0;
-  width: 100px;
+  width: 0.3 * var(--card_width);
   height: auto;
 }
 .card-img img{
@@ -92,36 +94,39 @@
   object-fit: cover; /* To ensure the image covers the container */
 }
 .card-header{
-  grid-area: 1 / 2 / 1 / 2;
+  grid-area: b;
 
   /* display: flex; */
-  /* padding: 20px; */
-  margin-left: 10px; /* Adjust margin to accommodate image width */
-}
-.card-content{
-  /* display: flex; */
-    /* flex-direction: column; */
-
-  padding: 20px;
+  padding: 10px;
   overflow: hidden;
   text-overflow: ellipsis;
+  /* margin-left: 10px; Adjust margin to accommodate image width */
+}
+.card-name {
+  /* display: flex;
+  flex */
+  font-size: 1.3em;
+  font-weight: bold;
+  text-align: start;
+  text-justify: center;
+  /* margin: 5px 0; */
+}
+.card-highlight{
+  /* display: flex; */
+    /* flex-direction: column; */
+  grid-area: c;
+  padding: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.9em;
+  
 }
 span.highlighted {
   font-weight : bold;
 }
-.source {
+.card-source {
+  grid-area : d;
+  text-align: center;
   font-style: italic;
-  /* grid-area : 3 / 1 / 3 / 3; */
-}
-.name {
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 10px;
-}
-.highlight {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  grid-area: 2 / 1 / 2 / 2;
-
+  font-size: small;
 }

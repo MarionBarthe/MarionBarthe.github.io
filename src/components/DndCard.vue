@@ -1,28 +1,26 @@
 <template>
-    <div class="dnd-card flex-items dnd-card-test">
-        <div class="card-img">
-          <img v-bind:src="pictureUrl"/>
-        </div>   
-           
-        <header class="card-header">
-          <h4 class="name ">{{ name }}</h4>
-          <p class="source">{{ source }}</p>
-        </header>
+  <div class="dnd-card flex-items dnd-card-test">
+    <div class="card-img">
+         <!-- <p class="type" v-if=" type=='monsters/'">Monster</p>
+      <p class="type" v-else-if=" type=='spells/'">Spell</p>
+      <p class="type" v-else-if=" type=='magicitems/'">Magic item</p> -->
 
-      <!-- <div class="card-content"> -->
+      <img v-bind:src="pictureUrl"/>
+    </div>   
+        
+    <header class="card-header">
+      <h4 class="card-name ">{{ name }}</h4>
+    </header>
 
-        <!-- <p class="type" v-if=" type=='monsters/'">Monster</p>
-        <p class="type" v-else-if=" type=='spells/'">Spell</p>
-        <p class="type" v-else-if=" type=='magicitems/'">Magic item</p> -->
-
-        <div class="highlight">
-          <p v-html=" highlight "></p>
-        </div>
-      <!-- </div> -->
-     
-
+    <div class="card-highlight">
+        <p v-html=" highlight "></p>
     </div>
-  </template>
+    <div class="card-source">
+      <p >{{ source }}</p>
+    </div>
+
+  </div>
+</template>
   
   <script>
   // import monsters from '@/services/api.js'
