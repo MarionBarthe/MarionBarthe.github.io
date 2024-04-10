@@ -1,5 +1,5 @@
 <template>
-  <div class="dnd-card flex-items dnd-card-test">
+  <div class="dnd-card flex-items dnd-card-test black-border">
     <div class="card-img">
          <!-- <p class="type" v-if=" type=='monsters/'">Monster</p>
       <p class="type" v-else-if=" type=='spells/'">Spell</p>

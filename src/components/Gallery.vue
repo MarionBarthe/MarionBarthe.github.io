@@ -1,7 +1,7 @@
 <template>
    
   <!-- <GalleryOptions v-model:search="search" v-model:cardSortType="cardSortType" v-model:checkedTypes="checkedTypes"/> -->
-  <div class="gallery-options">
+  <div class="gallery-options black-border" >
     <SearchBar v-model:search="search" @change="searchResults"></SearchBar>
     <SortOptions v-model:cardSortType="cardSortType"></SortOptions>
     <!-- <FilterOptions v-model:checkedTypes="checkedTypes"></FilterOptions> -->
