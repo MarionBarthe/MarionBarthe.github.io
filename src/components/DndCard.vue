@@ -1,11 +1,11 @@
 <template>
   <div class="dnd-card flex-items dnd-card-test black-border">
-    <div class="card-img">
-         <!-- <p class="type" v-if=" type=='monsters/'">Monster</p>
-      <p class="type" v-else-if=" type=='spells/'">Spell</p>
-      <p class="type" v-else-if=" type=='magicitems/'">Magic item</p> -->
-
-      <img v-bind:src="pictureUrl"/>
+    <div class="card-img tooltip">
+        <img v-if=" type=='monsters/'" src='@/assets/icons/monster_icon.jpg'>
+        <img v-else-if=" type=='spells/'" src='@/assets/icons/spell_icon.jpg'>
+        <img v-else=" type=='magicitems/'" src='@/assets/icons/item_icon.jpg'>
+        <span class="tooltiptext">{{type}}</span>
+      <!-- <img v-bind:src="pictureUrl"/> -->
     </div>   
         
     <header class="card-header">
@@ -32,7 +32,7 @@
       type: String, 
       text: String,
       highlight: String,
-      pictureUrl: {type: String, default:"https://my-best-kennel.com/pictures/default.png"},
+      pictureUrl: {type: String, default:"@/../public/spell_icon.jpg"},
       source : String,
     }
   }

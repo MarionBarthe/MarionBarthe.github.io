@@ -1,17 +1,26 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Indie+Flower&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+:root {
+  --orange: #E9724C;
+  --beige: #FDF1D8;
+  --soft-white: #FFFFFA;
+  --black: #000;
+  --soft-black: #242424;
+}
 
 body {
-  background-color: #E9724C;
+  background-color: var(--orange);
   margin: 0;
   padding: 0;
   min-height: 100%;
+  width: 100%;
   overflow: auto;
   font-family: "Averia Serif Libre", serif;
-  font-weight: 300;
-  font-style: normal;
+  font-weight: 200;
+  /* font-style: normal; */
   font-size: 1em;
+  color: var(--soft-black);
   line-height: normal;
 
 }
@@ -35,7 +44,7 @@ html {
   /* grid-template-rows: 1fr 50px; */
   /* grid-column-gap: 1em; */
   /* grid-template-columns: 20vw 70vw; */
-  width: 100vw;
+  width: 97lvw;
   /* height: 100vh; */
 }
   
@@ -55,23 +64,45 @@ html {
   flex-direction: column; */
   }
 
-  .gallery-options {
-    grid-area: sidebar;
-    background-color: #FFFFFC;
+.sidebar{
+  grid-area: sidebar;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+.sidebar > * {
+  padding: 0.8em;
+  margin: 3em 0;
+  border: 10px solid var(--black);
+  border-left: none;
+  /* border-radius: 0 10px 10px 0; */
+}
+  .gallery-menu {
+    background-color: var(--soft-white);
+    color: var(--soft-black);
     /* width: 25%; */
     height: 50vh; 
     /* min-height: 200px; */
     overflow: auto;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 20%;
-    padding: 10px;
+ 
+   /* margin: 3em 0; */
+    /* padding: 0.8em; */
   }
-
-  .gallery-options div {
+.gallery-menu > header {
+  background-color: var(--black);
+  color: var(--soft-white);
+}
+  .gallery-menu div {
     padding: 5px 0;
   }
 
+footer {
+  position: absolute;
+  bottom: 0;
+  background-color: var(--black);
+  color: var(--soft-white);
+}
   .flex-container {
     display: flex;
     flex-direction: row;
@@ -89,13 +120,13 @@ html {
   }
 
 .black-border {
-  border: 5px solid #000;
+  border: 5px solid var(--black);
 }
 
 .dnd-card{
-  --card_dimension: 250px;
-  height: var(--card_dimension);
-  width: var(--card_dimension);
+  --card-dimension: 250px;
+  height: var(--card-dimension);
+  width: var(--card-dimension);
   /* 
   flex-wrap: wrap;
   align-items: center;
@@ -105,7 +136,7 @@ html {
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: #FDF1D8;
+  background-color: var(--beige);
 }
 .dnd-card-test {
   display: grid;
@@ -123,9 +154,9 @@ html {
   grid-area: img;
   top: 0;
   left: 0;
-  width: 0.3 * var(--card_width);
+  width: 0.3 * var(--card-dimension);
   height: auto;
-  border-bottom: 3px solid #000;
+  /* border-bottom: 3px solid var(--black); */
 
 }
 .card-img img{
@@ -133,16 +164,44 @@ html {
   height: 100%;
   object-fit: cover; /* To ensure the image covers the container */
 }
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: auto;
+  background-color: var(--soft-white);
+  color: var(--soft-black);
+  text-align: center;
+  padding: 0.5em;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
 .card-header{
   grid-area: name;
 
   display: flex;
   place-items: middle ;
   padding: 10px;
-  overflow: hidden;
-  background-color: #000;
-  color:#FFFFFC;
-  border-bottom: 3px solid #000;
+  overflow:hidden;
+  background-color: var(--black);
+  color:var(--soft-white);
+  border-bottom: 3px solid var(--black);
 
   /* margin-left: 10px; Adjust margin to accommodate image width */
 }
@@ -151,8 +210,10 @@ html {
   font-size: 1.3em;
 
   text-align: start;
-  text-justify:center;
+  /* text-justify:center; */
+  overflow: hidden;
   text-overflow: ellipsis; 
+  /* white-space: no-wrap; */
   /* margin: 5px 0; */
 }
 .card-highlight{
@@ -168,11 +229,12 @@ html {
 }
 span.highlighted {
   font-weight : bold;
+  color:var(--orange);
 }
 .card-source {
   grid-area : source;
   text-align: center;
   font-style: italic;
   font-size: small;
-  border-top: 3px solid #000;
+  border-top: 3px solid var(--black);
 }
