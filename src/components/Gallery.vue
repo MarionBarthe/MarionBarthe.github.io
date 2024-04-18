@@ -2,15 +2,15 @@
    
   <!-- <GalleryOptions v-model:search="search" v-model:cardSortType="cardSortType" v-model:checkedTypes="checkedTypes"/> -->
   <div class="sidebar">
-    <div class="gallery-menu" >
-      <header>
+    <!-- <div class="gallery-menu" > -->
+      <header class="app-title" >
         <h1>DnDive</h1>
       </header>
       <SearchBar v-model:search="search" @change="searchResults"></SearchBar>
       <SortOptions v-model:cardSortType="cardSortType"></SortOptions>
       <!-- <FilterOptions v-model:checkedTypes="checkedTypes"></FilterOptions> -->
      
-    </div>
+    <!-- </div> -->
     
   </div>
 

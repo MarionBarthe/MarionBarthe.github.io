@@ -1,19 +1,21 @@
 <template>
-  <div class="dnd-card flex-items dnd-card-test black-border">
-    <div class="card-img tooltip">
+  <div class="dnd-card flex-items dnd-card-test tooltip">
+
+    <md-span class="tooltiptext">{{ text }}</md-span>
+    <div class="card-img">
         <img v-if=" type=='monsters/'" src='@/assets/icons/monster_icon.jpg'>
         <img v-else-if=" type=='spells/'" src='@/assets/icons/spell_icon.jpg'>
         <img v-else=" type=='magicitems/'" src='@/assets/icons/item_icon.jpg'>
-        <span class="tooltiptext">{{type}}</span>
+        <!-- <span class="tooltiptext">{{type}}</span> -->
       <!-- <img v-bind:src="pictureUrl"/> -->
     </div>   
         
-    <header class="card-header">
+    <header class="card-header ">
       <h4 class="card-name ">{{ name }}</h4>
     </header>
 
     <div class="card-highlight">
-        <p v-html=" highlight "></p>
+        <md-span v-html=" highlight "></md-span>
     </div>
     <div class="card-source">
       <p >{{ source }}</p>

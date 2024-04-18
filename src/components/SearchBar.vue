@@ -1,8 +1,10 @@
 <template>
   <div class="search-bar">
-    <label for="search">Cherchez des sorts, monstres et autre par thème : </label>
-    <input type="text" id="search" :value="search" @input="onSearchChanged" placeholder="ex : fire, dark, fun...">
-    <button v-if="search" @click="cleanSearch">X</button>
+    <label for="search"> Search spells, monsters and magic items with a key word : </label>
+    <!-- <div class="search-input"> -->
+      <input class="form-element" type="text" id="search" :value="search" @input="onSearchChanged" placeholder="ie : fire, dark, fun...">
+      <button v-if="search" @click="cleanSearch">X</button>
+  <!-- </div> -->
     <button type="button" @click="onSearchChanged">search</button> 
   </div>
 </template>
