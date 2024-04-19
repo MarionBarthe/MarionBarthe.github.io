@@ -20,6 +20,7 @@ export default {
   },
   methods: {
     onCardSortTypeChanged(event) {
+      sessionStorage.setItem("sort", event.target.value)
       this.$emit('update:cardSortType', event.target.value) 
     },
   }

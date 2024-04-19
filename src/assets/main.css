@@ -8,7 +8,9 @@ html {
 strong {
   font-weight: 700;
 }
-
+a{
+  color: var(--orange);
+}
 #app {
   max-width: 1280px;
   margin: 0 auto;

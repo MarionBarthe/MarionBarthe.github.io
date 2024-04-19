@@ -1,6 +1,6 @@
 <template>
     <footer>
-        <p> DnDig : an app made by Marion Barthe </p>
+        <p> DnDiscovery : an IMAC student web project - Website and icons made by Marion Barthe - Find the code on <a href="https://github.com/MarionBarthe/projet_WEB_S4.git">GitHub</a></p>
     </footer>
 </template>
 

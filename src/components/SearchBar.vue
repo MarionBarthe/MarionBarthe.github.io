@@ -2,7 +2,7 @@
   <div class="search-bar">
     <label for="search"> Search spells, monsters and magic items with a key word : </label>
     <input class="form-element" type="text" id="search" :value="search" @input="onSearchChanged" placeholder="ie : fire, dark, fun...">
-    <button v-if="search" @click="cleanSearch">X</button>
+    <button v-if="search" @click="cleanSearch" style="display: inline-block">X</button>
     <button type="button" @click="onSearchChanged">search</button> 
   </div>
 </template>

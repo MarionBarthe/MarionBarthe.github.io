@@ -2,7 +2,7 @@
    
   <div class="sidebar">
     <header class="app-title" >
-      <h1>DnDig</h1>
+      <h1>DnDiscovery</h1>
     </header>
 
     <SearchBar v-model:search="search" @change="searchResults"></SearchBar>
@@ -74,13 +74,16 @@ export default {
     };
   },
   created: function() {
-    this.retrieveDndData("dark");
+    const data = (sessionStorage === 0)? "leaf" : sessionStorage.getItem("searchWord");
+    this.retrieveDndData(data);
+    this.cardSortType = sessionStorage.getItem("sort");
   },
   methods: {
       async retrieveDndData(search) {
         this.dndData = await getDndData(search);
       },
       searchResults: function() {
+        sessionStorage.setItem("searchWord", this.search);
         this.retrieveDndData(this.search);
       },
   }
