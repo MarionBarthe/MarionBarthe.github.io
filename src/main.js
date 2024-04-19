@@ -1,6 +1,5 @@
 import './assets/main.css'
-import './assets/my-style.css'
-import {MarkdownBlock, MarkdownSpan, MarkdownElement} from "https://md-block.verou.me/md-block.js";
+import {MarkdownBlock, MarkdownSpan, MarkdownElement} from "md-block";
 
 import { createApp } from 'vue'
 import App from './App.vue'

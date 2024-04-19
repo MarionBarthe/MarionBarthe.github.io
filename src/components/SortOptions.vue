@@ -2,9 +2,9 @@
     <div class="sort-options">
       <label for="cardSort">Sort by : </label>
       <select class="form-element" :value="cardSortType" @input="onCardSortTypeChanged" id="cardSort">
-        <option value="type">Type</option>
         <option value="AZName">Names from A to Z</option>
         <option value="ZAName">Names from Z to A</option>
+        <option value="type">Type</option>
       </select>
     </div>
 </template>

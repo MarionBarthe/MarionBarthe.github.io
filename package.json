@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "md-block": "^0.0.1",
     "vue": "^3.3.11"
   },
   "devDependencies": {

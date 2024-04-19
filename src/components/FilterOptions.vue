@@ -1,9 +1,9 @@
 <template>
     <div class="filters">
         <label>Filter : </label>
-        <input type="checkbox" name="typeFilter" v-model="checkedTypes" :value="monsters/" @input="onCheckedTypeChanged"> Monsters
-        <input type="checkbox" name="typeFilter" v-model="checkedTypes" :value="spells/" @input="onCheckedTypeChanged" > Spells
-        <input type="checkbox" name="typeFilter" v-model="checkedTypes" :value="magicitems/" @input="onCheckedTypeChanged"> Magic items
+        <input type="checkbox" name="typeFilter" :modelValue="checkedTypes" value="monsters/" @input="onCheckedTypeChanged"> Monsters
+        <input type="checkbox" name="typeFilter" :modelValue="checkedTypes" value="spells/" @input="onCheckedTypeChanged" > Spells
+        <input type="checkbox" name="typeFilter" :modelValue="checkedTypes" value="magicitems/" @input="onCheckedTypeChanged"> Magic items
     </div>
 </template>
 
