@@ -1,5 +1,10 @@
 # projet_S4_web
 
+Projet de deuxième année à l'[IMAC](https://www.ingenieur-imac.fr/). 
+Application Web développée en Vue.js exploitant les données de l’[API Open5e](https://open5e.com/).
+
+__________________________________________
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
