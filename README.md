@@ -1,6 +1,6 @@
-# projet_S4_web
+# DnDiscovery
 
-Projet de deuxième année à l'[IMAC](https://www.ingenieur-imac.fr/). 
+Projet web de deuxième année à l'[IMAC](https://www.ingenieur-imac.fr/). 
 Application Web développée en Vue.js exploitant les données de l’[API Open5e](https://open5e.com/).
 
 __________________________________________
